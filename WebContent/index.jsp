@@ -43,7 +43,9 @@
 	} else if (type != null) {
 		products = prodDao.getAllProductsByType(type);
 		message = "Showing Results for '" + type + "'";
-	} 
+	} else {
+		products = prodDao.getAllProducts();
+	}
 	if (products.isEmpty()) {
 		message = "No items found for the search '" + (search != null ? search : type) + "'";
 		products = prodDao.getAllProducts();
